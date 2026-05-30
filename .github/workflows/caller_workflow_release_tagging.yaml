@@ -1,0 +1,15 @@
+name: Call Reusable Tagging Workflow
+
+permissions:
+  contents: write
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main  # Branch to trigger tagging
+
+jobs:
+  trigger_tag_release:
+    uses: pawarakash2511/Release-Management/.github/workflows/TaggingReleaseAutomation.yaml@main
+    with:
+      branch: main
